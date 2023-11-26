@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import Stock from "./Stock";
+import "./Stocks.css"
 
 const API = import.meta.env.VITE_API_URL;
 

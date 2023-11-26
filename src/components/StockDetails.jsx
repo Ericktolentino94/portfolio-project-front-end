@@ -31,7 +31,21 @@ function StockDetails(){
     return (
         <div>
             <h3>Details</h3>
-            <h4>{stock.name}</h4>
+            <img src={stock.image} height="200px"></img>
+            <p>Price: ${stock.price}</p>
+          <p>Quantity: {stock.quantity}</p>
+          <p>Purchase Date: {stock.purchasedate}</p>
+          <p>Option Type: {stock.optiontype}</p>
+          <p>Expiry Date: {stock.expirydate}</p>
+          <Link
+          to={`/stocks/${stock.id}/edit`}
+          className="edit-link btn btn-primary"
+        >
+          ✏️ Edit
+        </Link>
+        <button className="btn btn-danger" onClick={handleDelete}>
+          🗑️ Delete
+        </button>
         </div>
     )
 }
