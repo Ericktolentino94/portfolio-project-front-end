@@ -1,0 +1,9 @@
+.homePage {
+    padding-top: 100px;
+}
+
+.titles{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

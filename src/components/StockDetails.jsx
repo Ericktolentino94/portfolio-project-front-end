@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import "./StockDetails.css"
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -29,14 +30,15 @@ function StockDetails(){
     };
 
     return (
-        <div>
-            <h3>Details</h3>
-            <img src={stock.image} height="200px"></img>
+        <div className="details">
+            <img className="imageDetails" src={stock.image} height="200px"></img>
+            <p>{stock.name}</p>
             <p>Price: ${stock.price}</p>
           <p>Quantity: {stock.quantity}</p>
           <p>Purchase Date: {stock.purchasedate}</p>
           <p>Option Type: {stock.optiontype}</p>
           <p>Expiry Date: {stock.expirydate}</p>
+          <p className="buttons">
           <Link
   to={`/stocks/${stock.id}/edit`}
   className="edit-link btn btn-primary"
@@ -46,6 +48,7 @@ function StockDetails(){
         <button className="btn btn-danger" onClick={handleDelete}>
           🗑️ Delete
         </button>
+        </p>
         </div>
     )
 }
