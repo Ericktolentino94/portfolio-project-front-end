@@ -6,7 +6,7 @@ export default function NavBar() {
         <div>
             <nav className="Nav">
                 <h1>
-                    <Link to="/">Trimphant Trading Equity Commander</Link>
+                    <Link to="/">The Equity Commander</Link>
                 </h1>
                 <h1>
                     <Link to="/stocks">Stocks</Link>

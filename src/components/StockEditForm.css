@@ -1,0 +1,11 @@
+.stockEditForm {
+    padding-top: 50px;
+    display: flex;  
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 600px;
+}

@@ -38,11 +38,11 @@ function StockDetails(){
           <p>Option Type: {stock.optiontype}</p>
           <p>Expiry Date: {stock.expirydate}</p>
           <Link
-          to={`/stocks/${stock.id}/edit`}
-          className="edit-link btn btn-primary"
-        >
-          ✏️ Edit
-        </Link>
+  to={`/stocks/${stock.id}/edit`}
+  className="edit-link btn btn-primary"
+>
+  ✏️ Edit
+</Link>
         <button className="btn btn-danger" onClick={handleDelete}>
           🗑️ Delete
         </button>

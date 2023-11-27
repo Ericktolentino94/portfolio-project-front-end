@@ -1,0 +1,11 @@
+.newForm {
+    padding-top: 50px;
+    display: flex;   
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 600px;
+}

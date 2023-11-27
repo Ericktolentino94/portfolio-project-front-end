@@ -17,13 +17,17 @@
   
   a {
     color: white;
+    font-family: 'Dancing Script', cursive;
+font-family: 'Gugi', sans-serif;
+font-family: 'Roboto', sans-serif;
+padding-right: 60px;
   }
 
   
   .Nav h1 {
     color:white;
     margin: 0;
-    padding: 0;
+    padding-left: 150px;
   }
   
   .Nav button {
@@ -32,5 +36,6 @@
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    
   }
   

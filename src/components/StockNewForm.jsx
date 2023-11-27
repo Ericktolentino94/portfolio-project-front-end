@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./StockNewForm.css"
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -39,8 +40,8 @@ function StockNewForm() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="newForm">
+      <form className="form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Stock Name:</label>
           <input

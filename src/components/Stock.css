@@ -6,12 +6,13 @@
   }
   
   .stock-container img {
-    width: 100%;
+    width: 80%;
     height: 300px;
-    object-fit: cover; 
+    object-fit: contain;
     margin: 30px; 
-    object-fit: cover;
     border: solid black;
     border-radius: 70%;
+    background-color: white;
+    
   }
   
