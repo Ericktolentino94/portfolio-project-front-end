@@ -7,3 +7,9 @@ body {
   font-family: 'Roboto', sans-serif;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .Main {
+    padding: 10px;
+  }
+}

@@ -17,3 +17,22 @@
     
   }
   
+  @media (max-width: 768px) {
+    .stock-container {
+      margin-bottom: 10px;
+    }
+  
+    .stock-link {
+      display: block;
+    }
+  
+    .card-title {
+      text-align: center;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

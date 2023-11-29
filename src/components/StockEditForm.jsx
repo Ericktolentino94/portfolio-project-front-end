@@ -15,7 +15,7 @@ function StockEditForm() {
     purchaseDate: "",
     optionType: "",
     expiryDate: "",
-    image: "",
+    image: '',
   });
 
   const handleTextChange = (event) => {
@@ -33,7 +33,7 @@ function StockEditForm() {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          throw Error(`HTTP error! Status: ${response.status}`);
         }
         return response.json();
       })
@@ -46,9 +46,7 @@ function StockEditForm() {
 
   useEffect(() => {
     fetch(`${API}/stocks/${id}`)
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((responseJSON) => {
         setUpdatedStock(responseJSON);
       })
@@ -63,95 +61,101 @@ function StockEditForm() {
   return (
     <div className="stockEditForm">
       <form className="editForm" onSubmit={handleSubmit}>
-      <h2>Edit Stock</h2>
-        <div>
-          <label htmlFor="name">Stock Name:</label>
-          <input
-            id="name"
-            type="text"
-            value={updatedStock.name}
-            onChange={handleTextChange}
-            placeholder="Enter stock name"
-            required
-          />
-        </div>
+        <h2>Edit Stock</h2>
+        {updatedStock.name ? (
+          <>
+            <div>
+              <label htmlFor="name">Stock Name:</label>
+              <input
+                id="name"
+                type="text"
+                value={updatedStock.name}
+                onChange={handleTextChange}
+                placeholder="Enter stock name"
+                required
+              />
+            </div>
 
-        <div>
-          <label htmlFor="price">Price:</label>
-          <input
-            id="price"
-            type="number"
-            value={updatedStock.price}
-            onChange={handleTextChange}
-            placeholder="Enter stock price"
-            required
-          />
-        </div>
+            <div>
+              <label htmlFor="price">Price:</label>
+              <input
+                id="price"
+                type="number"
+                value={updatedStock.price}
+                onChange={handleTextChange}
+                placeholder="Enter stock price"
+                required
+              />
+            </div>
 
-        <div>
-          <label htmlFor="quantity">Quantity:</label>
-          <input
-            id="quantity"
-            type="number"
-            value={updatedStock.quantity}
-            onChange={handleTextChange}
-            placeholder="Enter stock quantity"
-            required
-          />
-        </div>
+            <div>
+              <label htmlFor="quantity">Quantity:</label>
+              <input
+                id="quantity"
+                type="number"
+                value={updatedStock.quantity}
+                onChange={handleTextChange}
+                placeholder="Enter stock quantity"
+                required
+              />
+            </div>
 
-        <div>
-          <label htmlFor="purchaseDate">Purchase Date:</label>
-          <input
-            id="purchaseDate"
-            type="date"
-            value={updatedStock.purchaseDate}
-            onChange={handleTextChange}
-            placeholder="Select purchase date"
-            required
-          />
-        </div>
+            <div>
+              <label htmlFor="purchaseDate">Purchase Date:</label>
+              <input
+                id="purchaseDate"
+                type="date"
+                value={updatedStock.purchaseDate}
+                onChange={handleTextChange}
+                placeholder="Select purchase date"
+                required
+              />
+            </div>
 
-        <div>
-          <label htmlFor="optionType">Option Type:</label>
-          <select
-            id="optionType"
-            value={updatedStock.optionType}
-            onChange={handleTextChange}
-            required
-          >
-            <option value="">Select option type</option>
-            <option value="Call">Call</option>
-            <option value="Put">Put</option>
-          </select>
-        </div>
+            <div>
+              <label htmlFor="optionType">Option Type:</label>
+              <select
+                id="optionType"
+                value={updatedStock.optionType}
+                onChange={handleTextChange}
+                required
+              >
+                <option value="">Select option type</option>
+                <option value="Call">Call</option>
+                <option value="Put">Put</option>
+              </select>
+            </div>
 
-        <div>
-          <label htmlFor="expiryDate">Expiry Date:</label>
-          <input
-            id="expiryDate"
-            type="date"
-            value={updatedStock.expiryDate}
-            onChange={handleTextChange}
-            placeholder="Select expiry date"
-          />
-        </div>
+            <div>
+              <label htmlFor="expiryDate">Expiry Date:</label>
+              <input
+                id="expiryDate"
+                type="date"
+                value={updatedStock.expiryDate}
+                onChange={handleTextChange}
+                placeholder="Select expiry date"
+              />
+            </div>
 
-        <div>
-          <label htmlFor="image">Image URL:</label>
-          <input
-            id="image"
-            type="url"
-            value={updatedStock.image}
-            onChange={handleTextChange}
-            placeholder="Enter image URL"
-          />
-        </div>
+            <div>
+              <label htmlFor="image">Image URL:</label>
+              <input
+                id="image"
+                type="text"
+                value={updatedStock.image}
+                onChange={handleTextChange}
+                placeholder="Enter image URL"
+              />
+            </div>
 
-        <input type="submit" />
-      <Link to="/stocks">
-        <button>Return to Stocks Page</button>
-      </Link>
+            <input type="submit" />
+            <Link to="/stocks">
+              <button>Return to Stocks Page</button>
+            </Link>
+          </>
+        ) : (
+          <p>Loading data...</p>
+        )}
       </form>
     </div>
   );

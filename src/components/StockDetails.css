@@ -29,3 +29,30 @@
     display: flex;
     gap: 10px;
 }
+
+@media (max-width: 768px) {
+    .details {
+      padding: 20px;
+    }
+  
+    .imageDetails {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      margin-bottom: 8px;
+    }
+  
+    .buttons {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  

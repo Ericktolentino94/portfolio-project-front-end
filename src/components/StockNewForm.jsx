@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./StockNewForm.css"
+import "./StockNewForm.css";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -13,6 +13,7 @@ function StockNewForm() {
     purchaseDate: "YYYY-MM-DD",
     optionType: "",
     expiryDate: "YYYY-MM-DD",
+    image: "",
   });
 
   const addStock = () => {
@@ -43,6 +44,21 @@ function StockNewForm() {
     <div className="newForm">
       <form className="form" onSubmit={handleSubmit}>
         <div>
+          <label htmlFor="image" className="form-label">
+            Image URL:
+          </label>
+          <input
+            id="image"
+            value={stock.image}
+            type="text"
+            className="form-control"
+            onChange={handleTextChange}
+            placeholder="Image URL"
+            required
+          />
+        </div>
+
+        <div>
           <label htmlFor="name">Stock Name:</label>
           <input
             id="name"
@@ -53,6 +69,7 @@ function StockNewForm() {
             required
           />
         </div>
+
         <div>
           <label htmlFor="price">Price:</label>
           <input
@@ -64,6 +81,7 @@ function StockNewForm() {
             required
           />
         </div>
+
         <div>
           <label htmlFor="quantity">Quantity:</label>
           <input
@@ -75,6 +93,7 @@ function StockNewForm() {
             required
           />
         </div>
+
         <div>
           <label htmlFor="purchaseDate">Purchase Date:</label>
           <input
@@ -86,6 +105,7 @@ function StockNewForm() {
             required
           />
         </div>
+
         <div>
           <label htmlFor="optionType">Option Type:</label>
           <select
@@ -98,6 +118,7 @@ function StockNewForm() {
             <option value="Put">Put</option>
           </select>
         </div>
+
         <div>
           <label htmlFor="expiryDate">Expiry Date:</label>
           <input
@@ -108,6 +129,7 @@ function StockNewForm() {
             placeholder="Select expiry date"
           />
         </div>
+
         <button type="submit">Add Stock</button>
       </form>
     </div>

@@ -9,3 +9,27 @@
     align-items: flex-end;
     padding-left: 600px;
 }
+
+@media (max-width: 768px) {
+    .newForm {
+      padding: 10px;
+    }
+  
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .form-label {
+      margin-bottom: 5px;
+    }
+  
+    .form-control {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }

@@ -1,9 +1,25 @@
-.homePage {
-    padding-top: 100px;
-}
 
-.titles{
+.homePage {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    height: 153vh; 
 }
+
+.titles {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.titles p {
+    font-size: 90px;
+    font-weight: bold; 
+    margin: 25px;
+    color: rgba(249, 247, 247, 0.84);
+    text-shadow: 1px 1px 1px #faf9fa;
+    padding-bottom: 230px;
+    padding-left: 50px;
+}
+
